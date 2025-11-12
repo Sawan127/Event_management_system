@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Book Event</title></head>
+<body>
+    <h1>Book {{ event.name }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Number of Tickets:</label>
+        <input type="number" name="num_tickets" min="1" max="{{ event.available_seats }}" required>
+        <button type="submit">Book Now</button>
+    </form>
+</body>
+</html>

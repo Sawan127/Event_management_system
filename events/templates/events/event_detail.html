@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ event.title }}</title></head>
+<body>
+    <h2>{{ event.title }}</h2>
+    <p>{{ event.description }}</p>
+    <p>Available Seats: {{ event.available_seats }}</p>
+
+    <form method="post" action="{% url 'create_booking' event.id %}">
+        {% csrf_token %}
+        <label>Number of Seats:</label>
+        <input type="number" name="seats" min="1" required>
+        <button type="submit">Book Now</button>
+    </form>
+</body>
+</html>

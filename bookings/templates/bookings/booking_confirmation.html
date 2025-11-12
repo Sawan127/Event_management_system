@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Dashboard</title></head>
+<body>
+    <h2>Booking Confirmed!</h2>
+    <p>Event: {{ booking.event.title }}</p>
+    <p>Seats: {{ booking.seats_booked }}</p>
+    <p>Payment Status: {{ booking.payment_status }}</p>
+
+    <a href="{% url 'dashboard' %}">View My Bookings</a>
+
+</body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Dashboard</title></head>
+<body>
+    <h2>My Bookings</h2>
+
+    {% if bookings %}
+        <ul>
+        {% for booking in bookings %}
+            <li>
+                {{ booking.event.title }} - {{ booking.seats_booked }} seats - {{ booking.payment_status }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No bookings yet.</p>
+    {% endif %}
+
+</body>
